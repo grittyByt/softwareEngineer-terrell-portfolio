@@ -1,0 +1,31 @@
+@use '../scss/colors';
+@use "../../node_modules/bootstrap/scss/bootstrap";
+
+@use 'pages/home';
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Handjet:wght@300&family=Instrument+Serif&family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+
+// bootstrap css-grid
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+
+// transition-property - transform, etc.
+// transition-duration - secs or milisecs
+// transition-timing-function - ease, ease-in, ease-out, ease-in-out, linear
+// transition-delay
+
+
+// nav {
+//     display: flex;
+//     justify-content: end;
+//     display: inline-block;
+// }
+
+
+
+
+
+
+

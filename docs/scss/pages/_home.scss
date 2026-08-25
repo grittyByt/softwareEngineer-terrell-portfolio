@@ -1,0 +1,1117 @@
+@use '../colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+    background-color: colors.$platinum;
+
+
+
+    header {
+        position: sticky;
+        width: 100%;
+        z-index: 200;
+        background: linear-gradient(90deg, rgba(71,134,22,1) 4%, rgba(88,167,18,1) 24%, rgba(99,203,52,1) 78%, rgba(65,179,79,1) 100%);
+        
+        .navbar {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+            .navbar-nav {        
+                width: 100%;
+                justify-content: end;
+            }
+            
+            .main-logo {
+                height: auto;
+                width: 7em;
+            }
+            
+            .navbar-toggler-icon {
+                fill: #ffffff;
+                
+            }
+            
+            
+            .nav-link {
+                display: inline-block;
+                flex-wrap: nowrap;
+                color: #ffffff;
+                transition: transform 0.3s ease-out, color 0.2s ease-in;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    color: colors.$mango;
+                }
+            }
+            
+            
+            // sets the marigin right for the last tab in the navbar
+            .nav-item:nth-child(4) {
+                margin-right: 3rem;
+                
+            }
+        }
+    }
+    
+    .main-body {
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        // background-color: $mr-popo;
+        background-color: colors.$off-white;
+        // z-index: 100;
+       
+        
+        .intro {
+            // height: 20rem;
+            // place-items: center;
+            margin: 5em 0 4em 0;
+            // height: 45em;
+            // position: relative;
+            // top: 7rem;
+            // display: flex;
+            justify-content: center;
+            align-items: center;
+            // justify-content: space-between;
+            // .pfpBox {
+                // padding-top: 1em;
+                // position: relative;
+                // height: auto;
+                
+                // flex-wrap: wrap;
+        
+            .imgContainer {
+                // position: relative;
+                // height: 9rem;
+                width: 300px;
+                aspect-ratio: 1;
+                padding: 0;
+                overflow: hidden;
+
+                // Starting blob shape
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                // Neon border
+                border: 3px solid colors.$smoke;
+
+                // Neon glow
+                box-shadow:
+
+                    0 0 5px colors.$smoke,
+
+                    0 0 10px colors.$smoke,
+
+                    0 0 20px colors.$smoke,
+
+                    0 0 35px colors.$smoke;
+
+                animation:
+
+                    blobMorph 8s ease-in-out infinite,
+
+                    neonPulse 2s ease-in-out infinite alternate;
+                // display: flex;
+                // margin-bottom: 5em;
+                // align-items: center;
+                // justify-content: center;
+                
+                
+                .myImg {
+                    // position: static;
+                    // display: block;
+                    height: 20em;
+                    width: 20em;
+                    object-fit: cover;
+                    object-position: top;
+                    // border-radius: inherit;
+                    transition: 2s ease-out;
+                    &:hover {
+                        transition: 1.25s ease-in;
+                        scale: 1.25;
+                    }
+                }
+            
+            }
+
+            @keyframes blobMorph {
+
+                0% {
+
+                    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                }
+
+                25% {
+
+                    border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+
+                }
+
+                50% {
+
+                    border-radius: 30% 70% 40% 60% / 40% 50% 60% 50%;
+
+                }
+
+                75% {
+
+                    border-radius: 50% 50% 30% 70% / 60% 40% 70% 30%;
+
+                }
+
+                100% {
+
+                    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                }
+
+            }
+
+            @keyframes neonPulse {
+                from {
+                    box-shadow:
+                    0 0 3px colors.$smoke,
+                    0 0 6px colors.$smoke,
+                    0 0 9px colors.$smoke;
+                }
+
+                to {
+                    box-shadow:
+                    0 0 4px colors.$smoke,
+                    0 0 8px colors.$smoke,
+                    0 0 12px colors.$smoke,
+                }
+            }
+            .shortBio {
+                
+                p {
+                    // margin: 2em;
+                    position: relative;
+                    padding: 2em;
+                    // margin-left: 5em;
+                    // max-width: 45rem;
+                    color: colors.$mr-popo;
+                    
+            
+                    span, .longhorn {
+                        color: colors.$naruto;
+                    }
+                    
+                    .panther {
+                        color: colors.$vegeta;
+                    }
+                }
+            }
+        }
+            
+            
+            
+            
+            
+        }
+        
+        .skills {
+            height: 8rem;
+            // margin-top: 5rem;
+            // margin-bottom: 5rem;
+            
+            .skillCarousel {
+                
+            
+                #compSkills {
+                    
+                    height: 6em;
+                    
+            
+                    // .carousel-fade .carousel-item {
+                    //     opacity: 0;
+                    //     transition-duration: 0.25s;
+                    //     transition-property: opacity;
+                    // }
+        
+                    // .carousel-fade .carousel-item-next,
+                    // .carousel-fade .carousel-item-prev {
+                    //     opacity: 0.25;
+                    //     transition-delay: 2s;
+        
+                    // }
+        
+                    // .carousel-fade .active.carousel-item-next,
+                    // .carousel-fade .active.carousel-item-prev {
+                    //     opacity: 0.25;
+                    // }
+        
+                    // .carousel-fade .active.carousel-item-next,
+                    // .carousel-fade .active.carousel-item-prev,
+                    // .carousel-fade .carousel-item-next,
+                    // .carousel-fade .carousel-item-prev {
+                    //     transform: translateX(0);
+                    //     transform: translate3d(0,0,0);
+                    // }
+        
+                    .carousel-item {
+                        height: 5em;
+                        
+                        h5 {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+        
+                        .fa-html5 {
+                            color: colors.$naruto;
+                            height: 3em;
+                            
+                        }
+        
+                        .fa-css3 {
+                            color: colors.$vegeta;
+                            height: 3em;
+                        }
+        
+                        .fa-sass {
+                            color: colors.$buu;
+                            height: 3em;
+                        }
+        
+                        .fa-js {
+                            color: colors.$tweety;
+                            height: 3em;
+                        }
+        
+                        .fa-node {
+                            color: colors.$rock-lee;
+                            height: 3em;
+                        }
+        
+                        .fa-npm {
+                            color: colors.$sasuke;
+                            height: 3em;
+                        }
+                        
+                        .fa-python {
+                            color: colors.$osmosis-jones;
+                            height: 3em;
+                        }
+        
+                        .fa-react {
+                            color: colors.$jimbei;
+                            height: 3em;
+                        }
+        
+                        .fa-database {
+                            color: colors.$buu;
+                            height: 3em;
+                        }
+        
+                        .fa-github {
+                            display: block;
+                            color: colors.$mr-popo;
+                            height: 3em;
+                        }
+                        
+                        .fa-bootstrap {
+                            color: colors.$barney;
+                            height: 3em;
+                        }
+        
+                    }
+                    // .carousel-control-prev {
+                    //     position: relative;
+                    //     left: 4em;
+                    // }
+                    .leftPointer {
+                        position: relative;
+                        left: 1em;
+                        height: 4em;
+                        width: 4em;
+                        fill: colors.$primary;
+                    
+                    }
+                
+                    .rightPointer {
+                        position: relative;
+                        right: 1em;
+                        height: 4em;
+                        width: 4em;
+                        fill: colors.$primary;
+                    }
+                }
+            }
+            
+        }
+
+        .quoteBlock {
+            margin: 1rem;
+            height: 25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            .quote {
+                max-width: 650px;  
+                text-align: center;
+                .card {
+                    border-color: colors.$primary;
+            
+                    // background-color: $mr-popo;
+                    .card-header {
+                        background: linear-gradient(90deg, rgba(71,134,22,1) 4%, rgba(88,167,18,1) 24%, rgba(99,203,52,1) 78%, rgba(65,179,79,1) 100%);
+            
+                        h4 {
+                            font-family: "Handlee", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+                    }
+            
+                    .card-body {
+                        p, footer {
+                            font-family: "Handlee", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            // color: $off-white;
+
+                        }
+                    }
+                }
+            }
+        }
+        .bio {
+            margin-bottom: 5rem;
+            align-items: start;
+            justify-content: center;
+        
+            .g-col-12 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                p {
+                    margin: 2em;
+                    // margin-left: 5em;
+                    // max-width: 45rem;
+                    color: colors.$mr-popo;
+                    
+            
+                    .longhorn {
+                        color: colors.$naruto;
+                    }
+                    
+                    .panther {
+                        color: colors.$vegeta;
+                    }
+                }
+            }
+            
+        
+        
+            
+        }
+
+        .thusFar {
+            margin-bottom: 7rem;
+            // place-items: center;
+    
+    
+            :nth-child(-n + 4 of .g-col-sm-6) {                
+                
+                .img-box {
+                    height: auto;
+                    width: auto;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    
+                    img {
+                        padding: 1em;
+                        width: 8em;
+                        height: 8em;
+                        border: 0.5px solid #f0f8ff;
+                        border-radius: 15px;
+                        box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        background: linear-gradient(67deg, rgba(200,208,215,1) 16%, rgba(240,248,255,1) 36%, rgba(238,246,253,1) 59%, rgba(200,208,215,1) 77%);
+                        transition: transform 0.3s;
+                    }
+                    
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                    
+                }
+                
+                
+            }
+                        
+            
+            
+        }
+        .weatherChannel {
+            
+            .weatherTitle {
+                h3 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 35px;
+                    font-family: "Handlee", cursive;
+                    font-weight: 600;
+                    color: colors.$rock-lee;
+                }
+                
+        
+            }
+            .weatherOne {
+                height: inherit;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            
+    
+                .atl {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .phx {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp2 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit2 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius2 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather2 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic2 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location2 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale2 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .nyc {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp3 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit3 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius3 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather3 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic3 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location3 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale3 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .sc {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp4 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit4 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius4 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather4 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic4 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location4 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale4 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+            
+            .weatherTwo {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                .tpa {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp5 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit5 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius5 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather5 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic5 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location5 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale5 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .jax {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp6 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit6 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius6 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather6 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic6 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location6 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale6 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .oki {
+                    margin: 1em;
+                    height: 9em;
+                    width: 9em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+    
+                    .temp7 {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+    
+                        #farenheit7 {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+    
+                        #celsius7 {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+    
+                    .weather7 {
+                        margin-top: 0.25em;
+                        margin-bottom: 0.25em;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        #weatherPic7 {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                     
+                        }
+                    }
+
+                    .location7 {
+                        padding: 0.25em;
+                        height: 2em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        #locale7 {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        
+
+        }
+
+    .bigFoot {
+        height: 3rem;
+
+    }
+    
+        .htmlFive {
+        fill: colors.$naruto;
+    }
+
+
+
+    .cssThree {
+        fill: colors.$jimbei;
+    }
+
+    .jS {
+        fill: colors.$tweety;
+    }
+
+    .nodeJS {
+        fill: colors.$rock-lee;
+    }
+
+    .nodePack {
+        fill: colors.$sasuke;
+    }
+
+    // .reAct {
+    //     fill: $dory;
+    // }
+
+    .bootyStrap {
+        fill: colors.$barney
+    }
+
+
+}
