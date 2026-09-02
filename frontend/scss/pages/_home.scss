@@ -1,0 +1,857 @@
+@use '../colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+    background-color: colors.$platinum;
+
+
+
+    header {
+        position: sticky;
+        width: 100%;
+        z-index: 200;
+        background: linear-gradient(90deg, rgb(22, 125, 134) 4%, rgb(42, 152, 162)  24%, rgb(55, 177, 186) 78%, rgb(42, 138, 152) 100%);
+        
+        .navbar {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+            .navbar-nav {        
+                width: 100%;
+                justify-content: end;
+            }
+            
+            .main-logo {
+                height: auto;
+                width: 7em;
+            }
+            
+            .navbar-toggler-icon {
+                fill: #ffffff;
+                
+            }
+            
+            
+            .nav-link {
+                display: inline-block;
+                flex-wrap: nowrap;
+                color: #ffffff;
+                transition: transform 0.3s ease-out, color 0.2s ease-in;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    color: colors.$mango;
+                }
+            }
+            
+            
+            // sets the marigin right for the last tab in the navbar
+            .nav-item:nth-child(4) {
+                margin-right: 3rem;
+                
+            }
+        }
+    }
+    
+    .main-body {
+        max-width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        background-color: colors.$off-white;
+       
+        
+        .intro {
+            // height: 20rem;
+            // place-items: center;
+            margin: 5em 0 4em 0;
+            // height: 45em;
+            // position: relative;
+            // top: 7rem;
+            // display: flex;
+            justify-content: center;
+            align-items: center;
+            // justify-content: space-between;
+            // .pfpBox {
+                // padding-top: 1em;
+                // position: relative;
+                // height: auto;
+                
+                // flex-wrap: wrap;
+        
+            .imgContainer {
+                // position: relative;
+                // height: 9rem;
+                width: 300px;
+                aspect-ratio: 1;
+                padding: 0;
+                overflow: hidden;
+
+                // Starting blob shape
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                // Neon border
+                border: 3px solid colors.$broly;
+
+                // Neon glow
+                box-shadow:
+
+                    0 0 5px colors.$broly,
+
+                    0 0 10px colors.$broly,
+
+                    0 0 20px colors.$broly,
+
+                    0 0 35px colors.$broly;
+
+                animation:
+
+                    blobMorph 8s ease-in-out infinite,
+
+                    neonPulse 2s ease-in-out infinite alternate;
+                // display: flex;
+                // margin-bottom: 5em;
+                // align-items: center;
+                // justify-content: center;
+                
+                
+                .myImg {
+                    
+                    height: 20em;
+                    width: 20em;
+                    object-fit: cover;
+                    object-position: top;
+                    transition: 2s ease-out;
+                    &:hover {
+                        transition: 1.25s ease-in;
+                        scale: 1.25;
+                    }
+                }
+            
+            }
+
+            @keyframes blobMorph {
+
+                0% {
+
+                    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                }
+
+                25% {
+
+                    border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+
+                }
+
+                50% {
+
+                    border-radius: 30% 70% 40% 60% / 40% 50% 60% 50%;
+
+                }
+
+                75% {
+
+                    border-radius: 50% 50% 30% 70% / 60% 40% 70% 30%;
+
+                }
+
+                100% {
+
+                    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+                }
+
+            }
+
+            @keyframes neonPulse {
+                from {
+                    box-shadow:
+                    0 0 3px colors.$smoke,
+                    0 0 6px colors.$smoke,
+                    0 0 9px colors.$smoke;
+                }
+
+                to {
+                    box-shadow:
+                    0 0 4px colors.$smoke,
+                    0 0 8px colors.$smoke,
+                    0 0 12px colors.$smoke,
+                }
+            }
+            .shortBio {
+                
+                p {
+                    margin-top: 2em;
+                    position: relative;
+                    padding: 2em;
+                    color: colors.$mr-popo;
+                    
+            
+                    span, .longhorn {
+                        color: colors.$naruto;
+                    }
+                    
+                    .panther {
+                        color: colors.$vegeta;
+                    }
+                }
+            }
+        }
+            
+            
+            
+            
+            
+        }
+        
+        .skills {
+            height: 12rem;
+            // margin-top: 5rem;
+            // margin-bottom: 5rem;
+            
+            .skillCarousel {
+                
+            
+                #compSkills {
+                    
+                    height: 6em;
+                    
+
+                    .carousel-item {
+
+                        text-align: center;
+                        height: 7em;
+                        
+                        h5 {
+                            margin-top: 1em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .fa-html5 {
+                            color: colors.$naruto;
+                            height: 3em;
+                            
+                        }
+        
+                        .fa-css3 {
+                            color: colors.$vegeta;
+                            height: 3em;
+                        }
+        
+                        .fa-sass {
+                            color: colors.$buu;
+                            height: 3em;
+                        }
+        
+                        .fa-js {
+                            color: colors.$tweety;
+                            height: 3em;
+                        }
+        
+                        .fa-node {
+                            color: colors.$rock-lee;
+                            height: 3em;
+                        }
+        
+                        .fa-npm {
+                            color: colors.$sasuke;
+                            height: 3em;
+                        }
+                        
+                        .fa-python {
+                            color: colors.$osmosis-jones;
+                            height: 3em;
+                        }
+        
+                        .fa-react {
+                            color: colors.$jimbei;
+                            height: 3em;
+                        }
+        
+                        .fa-database {
+                            color: colors.$buu;
+                            height: 3em;
+                        }
+        
+                        .fa-github {
+                            display: block;
+                            color: colors.$mr-popo;
+                            height: 3em;
+                        }
+                        
+                        .fa-bootstrap {
+                            color: colors.$barney;
+                            height: 3em;
+                        }
+
+                        .fa-typescript {
+                            color: colors.$vegeta;
+                            height: 3em;
+                        }
+
+                        .fa-postresql {
+                            color: colors.$osmosis-jones;
+                            height: 3em;
+                        }
+
+                        .fa-java {
+                            color: colors.$buu;
+                            height: 3em;
+                        }
+        
+
+                    }
+
+                    // ==========================
+
+                    //     PROGRESS INDICATOR
+
+                    // ==========================
+
+                    .skillProgress {
+
+                        width: min(20rem, 70%);
+
+                        margin: 1.5rem auto 0;
+
+                        .skillProgress-bar {
+
+                            width: 100%;
+                            height: 3px;
+                            overflow: hidden;
+                            border-radius: 3px;
+                            background-color: rgba(255, 255, 255, 0.2);
+
+                            .skillProgress-fill {
+
+                                width: 0;
+                                height: 100%;
+                                border-radius: inherit;
+                                background-color: #3b88cc;
+                                transition: width 0.45s ease;
+
+                            }
+
+                        }
+
+                        .skillProgress-count {
+
+                            margin: 0.5rem 0 0;
+                            text-align: center;
+                            font-size: 0.85rem;
+
+                        }
+
+                    }
+
+                    // ==========================
+
+                    //      CAROUSEL BUTTONS
+
+                    // ==========================
+
+                    .skillCarousel-controls {
+
+                        display: flex;
+
+                        align-items: center;
+
+                        justify-content: center;
+
+                        gap: 9rem;
+
+                        margin-top: 1rem;
+
+                        // Both buttons
+
+                        .skillCarousel-prev,
+
+                        .skillCarousel-next {
+
+                            appearance: button;
+
+                            // Button dimensions
+
+                            width: 4.5rem;
+
+                            height: 2.75rem;
+
+                            // 3D bottom edge
+
+                            border: solid transparent;
+                            border-width: 0 0 4px;
+                            border-radius: 16px;
+                            box-sizing: border-box;
+                            background-color: colors.$cinnamon;
+                            color: #a0512d50;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0;
+                            padding: 0.5rem 1rem;
+                            outline: none;
+                            position: relative;
+                            touch-action: manipulation;
+                            transform: translateZ(0);
+                            transition: filter 0.2s, transform 0.1s;
+                            user-select: none;
+                            -webkit-user-select: none;
+
+                            // Top/front face of button
+
+                            &::after {
+
+                                content: "";
+
+                                position: absolute;
+
+                                top: 0;
+
+                                right: 0;
+
+                                bottom: -4px;
+
+                                left: 0;
+
+                                background-clip: padding-box;
+
+                                background-color: colors.$mango;
+
+                                border: solid transparent;
+
+                                border-width: 0 0 4px;
+
+                                border-radius: 16px;
+
+                                z-index: -1;
+
+                            }
+
+                            // SVG arrow
+
+                            svg {
+
+                                width: 1.5rem;
+
+                                height: 1.5rem;
+
+                                fill: currentColor;
+
+                                position: relative;
+
+                                z-index: 1;
+
+                            }
+
+                            // Hover
+
+                            &:hover:not(:disabled) {
+
+                                filter: brightness(1.1);
+
+                                -webkit-filter: brightness(1.1);
+
+                            }
+
+                            // Pressed button effect
+
+                            &:active {
+
+                                border-width: 4px 0 0;
+
+                                background: none;
+
+                            }
+
+                            // Keyboard accessibility
+
+                            &:focus-visible {
+
+                                outline: 2px solid #f0f8ff;
+
+                                outline-offset: 3px;
+
+                            }
+
+                            &:disabled {
+
+                                cursor: auto;
+
+                            }
+
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        .quoteBlock {
+            margin: 1rem;
+            height: 25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+            .quote {
+                max-width: 650px;  
+                text-align: center;
+                .card {
+                    border-color: colors.$jimbei;
+            
+                    // background-color: $mr-popo;
+                    .card-header {
+                        background: linear-gradient(90deg, rgb(22, 125, 134) 4%, rgb(42, 152, 162)  24%, rgb(55, 177, 186) 78%, rgb(42, 138, 152) 100%);
+            // rgb(55, 177, 186)
+                        h4 {
+                            font-family: "Handlee", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+                    }
+            
+                    .card-body {
+                        p, footer {
+                            font-family: "Handlee", cursive;
+                            font-weight: 400;
+                            font-style: normal;
+                            // color: $off-white;
+
+                        }
+                    }
+                }
+            }
+        }
+        .bio {
+            margin-bottom: 5rem;
+            align-items: start;
+            justify-content: center;
+        
+            .col-12 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                p {
+                    margin-top: 2em;
+                    position: relative;
+                    padding: 2em;
+                    color: colors.$mr-popo;
+                    
+            
+                    .longhorn {
+                        color: colors.$naruto;
+                    }
+                    
+                    .panther {
+                        color: colors.$vegeta;
+                    }
+                }
+            }
+            
+        
+        
+            
+        }
+
+        .thusFar {
+            margin-bottom: 5rem;
+
+            > div {
+                margin-bottom: 2rem;
+
+                .img-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    padding: 1em;
+                    width: 8em;
+                    height: 8em;
+                    border: 0.5px solid #f0f8ff;
+                    border-radius: 15px;
+                    box-shadow:
+                    0 9px 13px 0 rgba(0, 0, 0, 0.2),
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background: linear-gradient(
+                    67deg,
+                    rgba(200, 208, 215, 1) 16%,
+                    rgba(240, 248, 255, 1) 36%,
+                    rgba(238, 246, 253, 1) 59%,
+                    rgba(200, 208, 215, 1) 77%
+                    );
+
+                    transition: transform 0.3s;
+
+                    &:hover {
+                    transform: translateY(-5px);
+                    }
+                }
+                }
+            }
+        }
+
+        .weatherChannel {
+            
+            .weatherTitle {
+
+                padding: 1em;
+                background-color: colors.$sasuke;
+                border: 2px solid colors.$smoke;
+                
+              
+
+                h3 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 35px;
+                    font-family: "Handlee", cursive;
+                    font-weight: 600;
+                    color: colors.$tweety;
+                }
+                
+        
+            }
+            .weatherOne {
+        
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                .weatherBox {
+                    margin: 1em;
+                    height: 10em;
+                    width: 10em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow:
+                        0 9px 13px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+
+                    .temp {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+
+                        .fahrenheit {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 25px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+
+                        .celsius {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+
+                    .weather {
+                        margin: 0.25em 0;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .weatherPic {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .location {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        .locale {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+            
+            .weatherTwo {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                .weatherBox {
+                    margin: 1em;
+                    height: 10em;
+                    width: 10em;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow:
+                        0 9px 13px 0 rgba(0, 0, 0, 0.2),
+                        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color: colors.$osmosis-jones;
+
+                    .temp {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background-color: #5d8ab7;
+
+                        .fahrenheit {
+                            height: 3em;
+                            width: 4em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 17px;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+
+                        .celsius {
+                            position: relative;
+                            height: 2em;
+                            width: 3.5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Geist Mono', monospace;
+                            font-weight: 300;
+                            bottom: 0.5em;
+                            color: colors.$platinum;
+                        }
+                    }
+
+                    .weather {
+                        margin: 0.25em 0;
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .weatherPic {
+                            height: 3em;
+                            width: 5em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .location {
+                        padding: 0.25em;
+                        height: 3em;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        border-top: 0.75px solid rgb(142, 167, 219);
+
+                        .locale {
+                            height: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: 'Baskervville SC', serif;
+                            font-size: 17px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        
+
+        }
+
+    .bigFoot {
+        
+        height: 4rem;
+        padding: 2em 0 0 0;
+        background-color: colors.$naruto;
+        
+
+    }
+    
+    .htmlFive {
+        fill: colors.$naruto;
+    }
+
+
+
+    .cssThree {
+        fill: colors.$jimbei;
+    }
+
+    .jS {
+        fill: colors.$tweety;
+    }
+
+    .nodeJS {
+        fill: colors.$rock-lee;
+    }
+
+    .nodePack {
+        fill: colors.$sasuke;
+    }
+
+    // .reAct {
+    //     fill: $dory;
+    // }
+
+    .bootyStrap {
+        fill: colors.$barney
+    }
+
+
+}
