@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
+    base: "softwareEngineer-terrell-portfolio/";
     const env = loadEnv(
         mode,
         process.cwd(),
@@ -12,6 +13,11 @@ export default defineConfig(({ mode }) => {
     }
 
     return {
+
+        // GitHub Pages repository path
+
+        base: "/softwareEngineer-terrell-portfolio/",
+        
         // this points vite to look at the frontend directory
         root: "frontend",
 
