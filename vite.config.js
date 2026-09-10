@@ -1,23 +1,22 @@
 import { defineConfig, loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
-    base: "softwareEngineer-terrell-portfolio/";
     const env = loadEnv(
         mode,
         process.cwd(),
         "BACKEND_"
     );
 
-    if (!env.BACKEND_URL) {
-        throw new Error("BACKEND_URL is missing from .env");
-    }
+    // if (!env.BACKEND_URL) {
+    //     throw new Error("BACKEND_URL is missing from .env");
+    // }
 
     return {
 
         // GitHub Pages repository path
 
         base: "/softwareEngineer-terrell-portfolio/",
-        
+
         // this points vite to look at the frontend directory
         root: "frontend",
 
@@ -26,7 +25,7 @@ export default defineConfig(({ mode }) => {
         server: {
             proxy: {
                 "/api": {
-                    target: env.BACKEND_URL,
+                    target: env.BACKEND_URL || "http://localhost:3000",
                     changeOrigin: true,
                 },
             },
