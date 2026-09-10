@@ -40,13 +40,19 @@ jobs:
       - name: Build Vite project
         run: npm run build:frontend
 
+      - name: Check build output
+        run: |
+          pwd
+          ls -la
+          ls -la frontend/dist
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload production build
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: ./frontend/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
