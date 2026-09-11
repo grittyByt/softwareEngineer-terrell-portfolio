@@ -11,28 +11,17 @@ if (!frontendOrigin) {
     throw new Error("FRONTEND_ORIGIN is missing from environment variables");
 }
 
+// Middleware
 app.use(
-
     cors({
         origin: frontendOrigin,
         methods: ["GET"],
     })
 );
 
-const port = process.env.BACKEND_PORT;
-console.log("PORT value:", JSON.stringify(port));
-
-if (!port) {
-  throw new Error("PORT is missing from .env");
-}
-
-const portNumber = Number(port);
-
-if (Number.isNaN(portNumber)) {
-  throw new Error("PORT must be a valid number");
-}
-
 app.use(express.json());
+
+// Routes
 
 app.use("/api/weather", weatherRouter);
 
@@ -42,6 +31,23 @@ app.get("/api/test", (req, res) => {
   });
 });
 
-app.listen(portNumber, "127.0.0.1", () => {
-  console.log(`Server running at http://127.0.0.1:${portNumber}`);
+// Server
+const PORT = Number(
+
+    process.env.PORT ??
+    process.env.BACKEND_PORT ??
+    3000
+
+);
+
+
+
+if (Number.isNaN(PORT)) {
+
+  throw new Error("PORT must be a valid number");
+
+}
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on port ${PORT}`);
 });
