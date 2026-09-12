@@ -329,8 +329,12 @@ function createWeatherIcon(weatherId) {
 }
 
 // Function to fetch weather data with caching
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 async function getWeatherData(city) {
-    const response = await fetch(`/api/weather/${encodeURIComponent(city)}`);
+    const response = await fetch(
+        `${API_BASE_URL}/api/weather/${encodeURIComponent(city)}`
+    );
 
     if (!response.ok) {
         throw new Error(
