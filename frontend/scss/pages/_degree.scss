@@ -1,0 +1,61 @@
+@use '../colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+    background-color: colors.$platinum;
+
+
+
+    header {
+        position: sticky;
+        width: 100%;
+        z-index: 200;
+        background: linear-gradient(90deg, rgb(22, 125, 134) 4%, rgb(42, 152, 162)  24%, rgb(55, 177, 186) 78%, rgb(42, 138, 152) 100%);
+        
+        .navbar {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+            .navbar-nav {        
+                width: 100%;
+                justify-content: end;
+            }
+            
+            .main-logo {
+                height: auto;
+                width: 7em;
+            }
+            
+            .navbar-toggler-icon {
+                fill: #ffffff;
+                
+            }
+            
+            
+            .nav-link {
+                display: inline-block;
+                flex-wrap: nowrap;
+                color: #ffffff;
+                transition: transform 0.3s ease-out, color 0.2s ease-in;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    color: colors.$mango;
+                }
+            }
+            
+            
+            // sets the marigin right for the last tab in the navbar
+            .nav-item:nth-child(4) {
+                margin-right: 3rem;
+                
+            }
+        }
+    }
+}
